@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# env files (secrets) -- .env.example files ARE committed
+.env
+.env.local
+.env.*.local
+
+# build output
+dist/
+build/
+
+# logs
+*.log
+npm-debug.log*
+
+# editor/OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
