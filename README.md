@@ -6,7 +6,8 @@ A full-stack MERN application where students submit, vote on, and track campus i
 - **Backend:** Node.js, Express 5, Mongoose 9, JWT auth, bcrypt, express-validator
 - **Database:** MongoDB (Atlas in production, local `mongod` for development)
 
-**Live demo:** _add deployed URL here_
+**Live demo:** https://frontend-eight-pi-46.vercel.app
+**API:** https://backend-nu-amber-1614ofgjzu.vercel.app/api
 
 ## Demo accounts
 
