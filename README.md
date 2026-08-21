@@ -8,6 +8,19 @@ A full-stack MERN application where students submit, vote on, and track campus i
 
 **Live demo:** _add deployed URL here_
 
+## Demo accounts
+
+Seeded by `npm run seed` (see [§1 Backend setup](#1-backend-setup)). Use these to sign in without registering:
+
+| Role | Email | Password | Can do |
+|---|---|---|---|
+| **Reviewer** (admin) | `asha@campus.edu` | `Password123` | Everything a student can, **plus** advance an idea's lifecycle status (`Submitted → ... → Implemented`) via the "Advance to…" button on an idea's detail page |
+| Student | `rohan@campus.edu` | `Password123` | Submit, edit/delete own ideas, vote, bookmark |
+| Student | `priya@campus.edu` | `Password123` | Same as above |
+| Student | `karan@campus.edu` | `Password123` | Same as above |
+
+The reviewer role is set directly on the `User` document (`role: 'reviewer'`) — there is no self-service way to become a reviewer through the UI, which is intentional: it is a moderation privilege, not a signup option.
+
 ---
 
 ## Architecture
