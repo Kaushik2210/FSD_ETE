@@ -23,7 +23,7 @@ export default function IdeaControls({ filters, onChange }) {
           <button
             type="button"
             onClick={() => onChange({ search: '', domain: 'all', status: 'all' })}
-            className="rounded-xl px-3 py-2.5 text-sm font-medium text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] transition-colors hover:text-white"
+            className="rounded-xl px-3 py-2.5 text-sm font-medium text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] transition-colors hover:text-[var(--color-ink)]"
           >
             Clear ({activeCount})
           </button>

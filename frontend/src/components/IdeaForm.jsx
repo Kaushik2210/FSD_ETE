@@ -26,12 +26,12 @@ const validate = (values) => {
 
 const fieldClass = (hasError) =>
   `w-full rounded-xl bg-[var(--color-surface-hi)] px-3.5 py-2.5 text-sm text-[var(--color-ink)] ring-1 transition-colors placeholder:text-[var(--color-ink-faint)] focus:ring-2 ${
-    hasError ? 'ring-rose-400/60 focus:ring-rose-400' : 'ring-[var(--color-border)] focus:ring-[var(--color-brand-1)]'
+    hasError ? 'ring-rose-300 focus:ring-rose-400' : 'ring-[var(--color-border)] focus:ring-[var(--color-brand-1)]'
   }`;
 
 const FieldError = ({ message }) =>
   message ? (
-    <motion.p initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="mt-1.5 text-xs text-rose-300">
+    <motion.p initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="mt-1.5 text-xs text-rose-700">
       {message}
     </motion.p>
   ) : null;
@@ -107,7 +107,7 @@ export default function IdeaForm({ initialValues = EMPTY, submitLabel = 'Submit 
           <label className="block text-sm font-medium text-[var(--color-ink)]" htmlFor="problemStatement">
             Problem statement
           </label>
-          <span className={`text-xs ${charCount < MIN_PROBLEM_LENGTH ? 'text-[var(--color-ink-faint)]' : 'text-emerald-400'}`}>
+          <span className={`text-xs ${charCount < MIN_PROBLEM_LENGTH ? 'text-[var(--color-ink-faint)]' : 'text-emerald-600'}`}>
             {charCount}/{MIN_PROBLEM_LENGTH}+ characters
           </span>
         </div>
@@ -151,13 +151,13 @@ export default function IdeaForm({ initialValues = EMPTY, submitLabel = 'Submit 
           </label>
           <div
             className={`flex flex-wrap items-center gap-1.5 rounded-xl bg-[var(--color-surface-hi)] p-2 ring-1 focus-within:ring-2 ${
-              touched.technologies && errors.technologies ? 'ring-rose-400/60' : 'ring-[var(--color-border)] focus-within:ring-[var(--color-brand-1)]'
+              touched.technologies && errors.technologies ? 'ring-rose-300' : 'ring-[var(--color-border)] focus-within:ring-[var(--color-brand-1)]'
             }`}
           >
             {values.technologies.map((tech) => (
               <span key={tech} className="flex items-center gap-1 rounded-md bg-[var(--color-brand-1)]/15 px-2 py-1 text-xs font-medium text-[var(--color-brand-1)]">
                 {tech}
-                <button type="button" onClick={() => removeTech(tech)} className="text-[var(--color-brand-1)]/70 hover:text-white" aria-label={`Remove ${tech}`}>
+                <button type="button" onClick={() => removeTech(tech)} className="text-[var(--color-brand-1)]/70 hover:text-[var(--color-ink)]" aria-label={`Remove ${tech}`}>
                   ×
                 </button>
               </span>
@@ -196,14 +196,14 @@ export default function IdeaForm({ initialValues = EMPTY, submitLabel = 'Submit 
       </div>
 
       {serverErrors._form && (
-        <div className="rounded-xl bg-rose-500/10 p-3 text-sm text-rose-300 ring-1 ring-rose-500/30">{serverErrors._form}</div>
+        <div className="rounded-xl bg-rose-50 p-3 text-sm text-rose-700 ring-1 ring-rose-200">{serverErrors._form}</div>
       )}
 
       <motion.button
         type="submit"
         disabled={submitting || !isValid}
         whileTap={{ scale: 0.98 }}
-        className="w-full rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-40"
+        className="btn-raised w-full rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-40"
       >
         {submitting ? 'Saving...' : submitLabel}
       </motion.button>

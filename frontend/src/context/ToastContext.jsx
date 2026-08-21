@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 const ToastContext = createContext(null);
 
 const VARIANTS = {
-  success: { icon: '✓', ring: 'ring-emerald-400/40', dot: 'bg-emerald-400' },
-  error: { icon: '!', ring: 'ring-rose-400/40', dot: 'bg-rose-400' },
+  success: { icon: '✓', ring: 'ring-emerald-200', dot: 'bg-emerald-400' },
+  error: { icon: '!', ring: 'ring-rose-200', dot: 'bg-rose-400' },
   info: { icon: 'i', ring: 'ring-cyan-400/40', dot: 'bg-cyan-400' },
 };
 

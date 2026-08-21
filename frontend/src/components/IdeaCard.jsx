@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SpotlightCard from './SpotlightCard.jsx';
+import TiltCard from './TiltCard.jsx';
 import StatusBadge from './StatusBadge.jsx';
 import VoteButton from './VoteButton.jsx';
 import BookmarkButton from './BookmarkButton.jsx';
@@ -41,7 +42,8 @@ export default function IdeaCard({ idea, onDelete }) {
 
   return (
     <motion.div variants={cardVariants} layout>
-      <SpotlightCard className="glass flex h-full flex-col p-5 shadow-lg shadow-black/20 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[var(--color-brand-1)]/10">
+      <TiltCard maxTilt={7}>
+      <SpotlightCard className="glass flex h-full flex-col p-5 shadow-xl shadow-[var(--color-ink)]/5 transition-shadow duration-300 hover:shadow-2xl hover:shadow-[var(--color-brand-1)]/15">
         <Link to={`/ideas/${idea.id}`} className="absolute inset-0" aria-label={idea.title} />
 
         <div className="relative flex items-start justify-between gap-3">
@@ -51,7 +53,7 @@ export default function IdeaCard({ idea, onDelete }) {
           <BookmarkButton ideaId={idea.id} size="sm" />
         </div>
 
-        <h3 className="font-display pointer-events-none relative mt-3 line-clamp-2 text-lg font-semibold text-[var(--color-ink)] transition-colors group-hover:text-white">
+        <h3 className="font-display pointer-events-none relative mt-3 line-clamp-2 text-lg font-semibold text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-brand-1)]">
           {idea.title}
         </h3>
 
@@ -91,7 +93,7 @@ export default function IdeaCard({ idea, onDelete }) {
           <div className="relative mt-3 flex gap-2 border-t border-[var(--color-border)] pt-3">
             <Link
               to={`/edit/${idea.id}`}
-              className="flex-1 rounded-lg bg-[var(--color-surface-hi)] py-1.5 text-center text-xs font-medium text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] transition-colors hover:text-white"
+              className="flex-1 rounded-lg bg-[var(--color-surface-hi)] py-1.5 text-center text-xs font-medium text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] transition-colors hover:text-[var(--color-ink)]"
             >
               Edit
             </Link>
@@ -102,13 +104,14 @@ export default function IdeaCard({ idea, onDelete }) {
                 e.stopPropagation();
                 onDelete?.(idea);
               }}
-              className="flex-1 rounded-lg bg-rose-500/10 py-1.5 text-center text-xs font-medium text-rose-300 ring-1 ring-rose-500/30 transition-colors hover:bg-rose-500/20"
+              className="flex-1 rounded-lg bg-rose-50 py-1.5 text-center text-xs font-medium text-rose-700 ring-1 ring-rose-200 transition-colors hover:bg-rose-100"
             >
               Delete
             </button>
           </div>
         )}
       </SpotlightCard>
+      </TiltCard>
     </motion.div>
   );
 }

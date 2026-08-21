@@ -103,7 +103,7 @@ export default function IdeaFeed() {
 
       <div className="mt-6">
         {error && (
-          <div className="rounded-xl bg-rose-500/10 p-4 text-sm text-rose-300 ring-1 ring-rose-500/30">{error}</div>
+          <div className="rounded-xl bg-rose-50 p-4 text-sm text-rose-700 ring-1 ring-rose-200">{error}</div>
         )}
 
         {loading && (

@@ -6,6 +6,8 @@ import { useAuth } from '../context/AuthContext.jsx';
 import CountUp from '../components/CountUp.jsx';
 import IdeaCard from '../components/IdeaCard.jsx';
 import CardSkeleton from '../components/CardSkeleton.jsx';
+import HeroStack from '../components/HeroStack.jsx';
+import TiltCard from '../components/TiltCard.jsx';
 
 const FEATURES = [
   {
@@ -37,10 +39,10 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden px-4 pb-20 pt-20 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
         <motion.div
           aria-hidden
-          className="animate-float pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-[var(--color-brand-1)]/20 blur-3xl"
+          className="animate-float pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-[var(--color-brand-1)]/25 blur-3xl"
         />
         <motion.div
           aria-hidden
@@ -48,78 +50,84 @@ export default function HomePage() {
           style={{ animationDelay: '2s' }}
         />
 
-        <div className="relative mx-auto max-w-4xl text-center">
-          <motion.span
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-[var(--color-ink-dim)]"
-          >
-            <span className="h-1.5 w-1.5 animate-pulse-slow rounded-full bg-emerald-400" />
-            Live on campus right now
-          </motion.span>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-display mt-6 text-4xl font-extrabold leading-tight sm:text-6xl"
-          >
-            Where campus ideas
-            <br />
-            become <span className="text-gradient">real change</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mx-auto mt-5 max-w-xl text-base text-[var(--color-ink-dim)] sm:text-lg"
-          >
-            Submit solutions to real problems, rally votes behind the best ones, and watch them move from a
-            rough idea to something implemented on campus.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-3"
-          >
-            <Link
-              to="/ideas"
-              className="rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[var(--color-brand-1)]/20 transition-transform hover:-translate-y-0.5"
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
+          <div className="text-center lg:text-left">
+            <motion.span
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-[var(--color-ink-dim)]"
             >
-              Explore ideas
-            </Link>
-            <Link
-              to={isAuthenticated ? '/submit' : '/register'}
-              className="glass rounded-xl px-6 py-3 text-sm font-semibold text-[var(--color-ink)] transition-transform hover:-translate-y-0.5"
-            >
-              {isAuthenticated ? 'Submit an idea' : 'Get started free'}
-            </Link>
-          </motion.div>
+              <span className="h-1.5 w-1.5 animate-pulse-slow rounded-full bg-emerald-500" />
+              Live on campus right now
+            </motion.span>
 
-          {stats && (
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="font-display mt-6 text-4xl font-extrabold leading-[1.05] sm:text-6xl"
+            >
+              Where campus ideas
+              <br />
+              become <span className="text-gradient">real change</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="mx-auto mt-5 max-w-xl text-base text-[var(--color-ink-dim)] sm:text-lg lg:mx-0"
+            >
+              Submit solutions to real problems, rally votes behind the best ones, and watch them move from a
+              rough idea to something implemented on campus.
+            </motion.p>
+
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="mx-auto mt-14 grid max-w-lg grid-cols-3 gap-4"
+              transition={{ delay: 0.3 }}
+              className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
             >
-              {[
-                { label: 'Ideas submitted', value: stats.totalIdeas },
-                { label: 'Votes cast', value: stats.totalVotes },
-                { label: 'Implemented', value: stats.byStatus.find((s) => s.key === 'Implemented')?.count ?? 0 },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div className="font-display text-gradient text-3xl font-bold">
-                    <CountUp value={s.value} />
-                  </div>
-                  <div className="mt-1 text-xs text-[var(--color-ink-faint)]">{s.label}</div>
-                </div>
-              ))}
+              <Link
+                to="/ideas"
+                className="btn-raised rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-6 py-3 text-sm font-semibold text-white"
+              >
+                Explore ideas
+              </Link>
+              <Link
+                to={isAuthenticated ? '/submit' : '/register'}
+                className="glass rounded-xl px-6 py-3 text-sm font-semibold text-[var(--color-ink)] transition-transform hover:-translate-y-0.5"
+              >
+                {isAuthenticated ? 'Submit an idea' : 'Get started free'}
+              </Link>
             </motion.div>
-          )}
+
+            {stats && (
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="mx-auto mt-14 grid max-w-lg grid-cols-3 gap-4 lg:mx-0"
+              >
+                {[
+                  { label: 'Ideas submitted', value: stats.totalIdeas },
+                  { label: 'Votes cast', value: stats.totalVotes },
+                  { label: 'Implemented', value: stats.byStatus.find((s) => s.key === 'Implemented')?.count ?? 0 },
+                ].map((s) => (
+                  <div key={s.label}>
+                    <div className="font-display text-gradient text-3xl font-bold">
+                      <CountUp value={s.value} />
+                    </div>
+                    <div className="mt-1 text-xs text-[var(--color-ink-faint)]">{s.label}</div>
+                  </div>
+                ))}
+              </motion.div>
+            )}
+          </div>
+
+          <div className="hidden lg:block">
+            <HeroStack />
+          </div>
         </div>
       </section>
 
@@ -132,11 +140,16 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: i * 0.08 }}
-              className="glass rounded-2xl p-6"
             >
-              <div className="text-3xl">{f.icon}</div>
-              <h3 className="font-display mt-3 text-lg font-semibold">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">{f.body}</p>
+              <TiltCard maxTilt={6}>
+                <div className="glass h-full rounded-2xl p-6 shadow-lg shadow-[var(--color-ink)]/5">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--color-brand-1)]/20 to-[var(--color-brand-3)]/20 text-2xl ring-1 ring-[var(--color-border)]">
+                    {f.icon}
+                  </div>
+                  <h3 className="font-display mt-4 text-lg font-semibold">{f.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-dim)]">{f.body}</p>
+                </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>

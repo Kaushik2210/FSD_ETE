@@ -15,7 +15,7 @@ export default function NotFoundPage() {
       <p className="mt-2 text-sm text-[var(--color-ink-dim)]">The page you are looking for does not exist or was moved.</p>
       <Link
         to="/ideas"
-        className="mt-6 rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+        className="btn-raised mt-6 rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
       >
         Back to ideas
       </Link>

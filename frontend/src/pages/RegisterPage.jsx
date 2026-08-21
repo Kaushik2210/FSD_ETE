@@ -39,10 +39,10 @@ export default function RegisterPage() {
         onBlur={() => setTouched((t) => ({ ...t, [name]: true }))}
         placeholder={placeholder}
         className={`w-full rounded-xl bg-[var(--color-surface-hi)] px-3.5 py-2.5 text-sm ring-1 focus:ring-2 ${
-          touched[name] && errors[name] ? 'ring-rose-400/60 focus:ring-rose-400' : 'ring-[var(--color-border)] focus:ring-[var(--color-brand-1)]'
+          touched[name] && errors[name] ? 'ring-rose-300 focus:ring-rose-400' : 'ring-[var(--color-border)] focus:ring-[var(--color-brand-1)]'
         }`}
       />
-      {touched[name] && errors[name] && <p className="mt-1.5 text-xs text-rose-300">{errors[name]}</p>}
+      {touched[name] && errors[name] && <p className="mt-1.5 text-xs text-rose-700">{errors[name]}</p>}
     </div>
   );
 
@@ -78,12 +78,12 @@ export default function RegisterPage() {
           {field('password', 'Password', 'password', 'At least 8 characters')}
           {field('confirm', 'Confirm password', 'password', 'Repeat your password')}
 
-          {serverError && <p className="rounded-lg bg-rose-500/10 p-2.5 text-xs text-rose-300 ring-1 ring-rose-500/30">{serverError}</p>}
+          {serverError && <p className="rounded-lg bg-rose-50 p-2.5 text-xs text-rose-700 ring-1 ring-rose-200">{serverError}</p>}
 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+            className="btn-raised w-full rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
           >
             {submitting ? 'Creating account...' : 'Create account'}
           </button>

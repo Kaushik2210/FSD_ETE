@@ -20,8 +20,8 @@ export default function BookmarkButton({ ideaId, size = 'md' }) {
       title={active ? 'Remove bookmark' : 'Bookmark this idea'}
       className={`grid ${dim} shrink-0 place-items-center rounded-full ring-1 transition-colors ${
         active
-          ? 'bg-amber-400/15 text-amber-300 ring-amber-400/40'
-          : 'bg-[var(--color-surface-hi)] text-[var(--color-ink-dim)] ring-[var(--color-border)] hover:text-amber-300'
+          ? 'bg-amber-50 text-amber-700 ring-amber-200'
+          : 'bg-[var(--color-surface-hi)] text-[var(--color-ink-dim)] ring-[var(--color-border)] hover:text-amber-700'
       }`}
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill={active ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">

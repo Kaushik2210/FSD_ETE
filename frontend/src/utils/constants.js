@@ -13,47 +13,49 @@ export const DOMAINS = [
   'Other',
 ];
 
+// Light-mode badge palette: pastel tint background, a text shade dark enough
+// to clear 4.5:1 contrast on that tint, and a soft matching ring.
 export const STATUS_STYLES = {
   Submitted: {
-    dot: 'bg-slate-400',
-    text: 'text-slate-300',
-    bg: 'bg-slate-400/10',
-    ring: 'ring-slate-400/30',
+    dot: 'bg-slate-500',
+    text: 'text-slate-700',
+    bg: 'bg-slate-100',
+    ring: 'ring-slate-300',
   },
   'Under Review': {
-    dot: 'bg-amber-400',
-    text: 'text-amber-300',
-    bg: 'bg-amber-400/10',
-    ring: 'ring-amber-400/30',
+    dot: 'bg-amber-500',
+    text: 'text-amber-800',
+    bg: 'bg-amber-100',
+    ring: 'ring-amber-300',
   },
   Approved: {
-    dot: 'bg-sky-400',
-    text: 'text-sky-300',
-    bg: 'bg-sky-400/10',
-    ring: 'ring-sky-400/30',
+    dot: 'bg-sky-500',
+    text: 'text-sky-800',
+    bg: 'bg-sky-100',
+    ring: 'ring-sky-300',
   },
   Prototype: {
-    dot: 'bg-fuchsia-400',
-    text: 'text-fuchsia-300',
-    bg: 'bg-fuchsia-400/10',
-    ring: 'ring-fuchsia-400/30',
+    dot: 'bg-fuchsia-500',
+    text: 'text-fuchsia-800',
+    bg: 'bg-fuchsia-100',
+    ring: 'ring-fuchsia-300',
   },
   Implemented: {
-    dot: 'bg-emerald-400',
-    text: 'text-emerald-300',
-    bg: 'bg-emerald-400/10',
-    ring: 'ring-emerald-400/30',
+    dot: 'bg-emerald-500',
+    text: 'text-emerald-800',
+    bg: 'bg-emerald-100',
+    ring: 'ring-emerald-300',
   },
 };
 
 export const DOMAIN_STYLES = {
-  Education: 'text-violet-300 bg-violet-400/10 ring-violet-400/30',
-  Sustainability: 'text-emerald-300 bg-emerald-400/10 ring-emerald-400/30',
-  Health: 'text-rose-300 bg-rose-400/10 ring-rose-400/30',
-  Technology: 'text-cyan-300 bg-cyan-400/10 ring-cyan-400/30',
-  Infrastructure: 'text-amber-300 bg-amber-400/10 ring-amber-400/30',
-  Safety: 'text-red-300 bg-red-400/10 ring-red-400/30',
-  Other: 'text-slate-300 bg-slate-400/10 ring-slate-400/30',
+  Education: 'text-violet-800 bg-violet-100 ring-violet-300',
+  Sustainability: 'text-emerald-800 bg-emerald-100 ring-emerald-300',
+  Health: 'text-rose-800 bg-rose-100 ring-rose-300',
+  Technology: 'text-cyan-800 bg-cyan-100 ring-cyan-300',
+  Infrastructure: 'text-amber-800 bg-amber-100 ring-amber-300',
+  Safety: 'text-red-800 bg-red-100 ring-red-300',
+  Other: 'text-slate-700 bg-slate-100 ring-slate-300',
 };
 
 export const MIN_PROBLEM_LENGTH = 50;

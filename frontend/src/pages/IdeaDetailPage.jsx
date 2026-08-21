@@ -85,7 +85,7 @@ export default function IdeaDetailPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
-      <Link to="/ideas" className="mb-6 inline-flex items-center gap-1 text-sm text-[var(--color-ink-dim)] hover:text-white">
+      <Link to="/ideas" className="mb-6 inline-flex items-center gap-1 text-sm text-[var(--color-ink-dim)] hover:text-[var(--color-ink)]">
         ← Back to all ideas
       </Link>
 
@@ -145,14 +145,14 @@ export default function IdeaDetailPage() {
               <>
                 <Link
                   to={`/edit/${idea.id}`}
-                  className="rounded-xl bg-[var(--color-surface-hi)] px-4 py-2 text-sm font-medium text-[var(--color-ink)] ring-1 ring-[var(--color-border)] hover:text-white"
+                  className="rounded-xl bg-[var(--color-surface-hi)] px-4 py-2 text-sm font-medium text-[var(--color-ink)] ring-1 ring-[var(--color-border)] hover:text-[var(--color-ink)]"
                 >
                   Edit idea
                 </Link>
                 <button
                   type="button"
                   onClick={() => setConfirmingDelete(true)}
-                  className="rounded-xl bg-rose-500/10 px-4 py-2 text-sm font-medium text-rose-300 ring-1 ring-rose-500/30 hover:bg-rose-500/20"
+                  className="rounded-xl bg-rose-50 px-4 py-2 text-sm font-medium text-rose-700 ring-1 ring-rose-200 hover:bg-rose-100"
                 >
                   Delete idea
                 </button>

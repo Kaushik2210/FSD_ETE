@@ -26,7 +26,7 @@ export default function StatsPage() {
   }, []);
 
   if (error) {
-    return <div className="mx-auto max-w-2xl px-4 py-20 text-center text-rose-300">{error}</div>;
+    return <div className="mx-auto max-w-2xl px-4 py-20 text-center text-rose-700">{error}</div>;
   }
 
   if (!data) {
@@ -89,7 +89,7 @@ export default function StatsPage() {
           {data.topVoted.map((idea, i) => (
             <li key={idea.id} className="flex items-center gap-3 py-3">
               <span className="font-display w-6 text-center text-sm font-bold text-[var(--color-ink-faint)]">{i + 1}</span>
-              <Link to={`/ideas/${idea.id}`} className="min-w-0 flex-1 truncate text-sm font-medium text-[var(--color-ink)] hover:text-white">
+              <Link to={`/ideas/${idea.id}`} className="min-w-0 flex-1 truncate text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-ink)]">
                 {idea.title}
               </Link>
               <StatusBadge status={idea.status} size="sm" />

@@ -18,7 +18,7 @@ export default function EmptyState({ title, message, actionLabel, actionTo }) {
       {actionLabel && actionTo && (
         <Link
           to={actionTo}
-          className="mt-2 rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          className="btn-raised mt-2 rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
         >
           {actionLabel}
         </Link>

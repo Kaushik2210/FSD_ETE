@@ -11,7 +11,7 @@ const LINKS = [
 
 const linkClass = ({ isActive }) =>
   `rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-    isActive ? 'text-white' : 'text-[var(--color-ink-dim)] hover:text-white'
+    isActive ? 'text-[var(--color-brand-1)]' : 'text-[var(--color-ink-dim)] hover:text-[var(--color-ink)]'
   }`;
 
 export default function Navbar() {
@@ -32,8 +32,9 @@ export default function Navbar() {
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--color-brand-1)] to-[var(--color-brand-3)] text-sm text-white">
             💡
           </span>
-          <span className="hidden sm:inline">
-            Campus <span className="text-gradient">Idea Hub</span>
+          <span className="whitespace-nowrap">
+            <span className="hidden sm:inline">Campus </span>
+            <span className="text-gradient">Idea Hub</span>
           </span>
         </Link>
 
@@ -55,7 +56,7 @@ export default function Navbar() {
             <>
               <Link
                 to="/submit"
-                className="rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                className="btn-raised rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               >
                 + Submit Idea
               </Link>
@@ -67,7 +68,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={handleLogout}
-                  className="ml-1 text-xs font-medium text-[var(--color-ink-faint)] hover:text-rose-300"
+                  className="ml-1 text-xs font-medium text-[var(--color-ink-faint)] hover:text-rose-700"
                 >
                   Logout
                 </button>
@@ -75,12 +76,12 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Link to="/login" className="px-3 py-2 text-sm font-medium text-[var(--color-ink-dim)] hover:text-white">
+              <Link to="/login" className="px-3 py-2 text-sm font-medium text-[var(--color-ink-dim)] hover:text-[var(--color-ink)]">
                 Log in
               </Link>
               <Link
                 to="/register"
-                className="rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                className="btn-raised rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               >
                 Sign up
               </Link>
@@ -138,7 +139,7 @@ export default function Navbar() {
                     <button
                       type="button"
                       onClick={handleLogout}
-                      className="rounded-xl px-4 py-2.5 text-center text-sm font-medium text-rose-300 ring-1 ring-[var(--color-border)]"
+                      className="rounded-xl px-4 py-2.5 text-center text-sm font-medium text-rose-700 ring-1 ring-[var(--color-border)]"
                     >
                       Logout ({user?.name})
                     </button>

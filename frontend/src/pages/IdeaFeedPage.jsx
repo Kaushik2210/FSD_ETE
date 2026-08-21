@@ -25,7 +25,7 @@ export default function IdeaFeedPage() {
         </div>
         <Link
           to={isAuthenticated ? '/submit' : '/login'}
-          className="shrink-0 rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          className="btn-raised shrink-0 rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
         >
           + Submit an idea
         </Link>

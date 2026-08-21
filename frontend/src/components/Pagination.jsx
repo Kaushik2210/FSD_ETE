@@ -21,7 +21,7 @@ export default function Pagination({ page, totalPages, onChange }) {
         type="button"
         disabled={page <= 1}
         onClick={() => onChange(page - 1)}
-        className="grid h-9 w-9 place-items-center rounded-lg text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] transition-colors hover:text-white disabled:opacity-30"
+        className="grid h-9 w-9 place-items-center rounded-lg text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] transition-colors hover:text-[var(--color-ink)] disabled:opacity-30"
         aria-label="Previous page"
       >
         ‹
@@ -41,7 +41,7 @@ export default function Pagination({ page, totalPages, onChange }) {
             className={`h-9 min-w-9 rounded-lg px-2.5 text-sm font-medium transition-colors ${
               item === page
                 ? 'bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] text-white'
-                : 'text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] hover:text-white'
+                : 'text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] hover:text-[var(--color-ink)]'
             }`}
           >
             {item}
@@ -53,7 +53,7 @@ export default function Pagination({ page, totalPages, onChange }) {
         type="button"
         disabled={page >= totalPages}
         onClick={() => onChange(page + 1)}
-        className="grid h-9 w-9 place-items-center rounded-lg text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] transition-colors hover:text-white disabled:opacity-30"
+        className="grid h-9 w-9 place-items-center rounded-lg text-[var(--color-ink-dim)] ring-1 ring-[var(--color-border)] transition-colors hover:text-[var(--color-ink)] disabled:opacity-30"
         aria-label="Next page"
       >
         ›

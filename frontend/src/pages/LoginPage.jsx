@@ -63,12 +63,12 @@ export default function LoginPage() {
             />
           </div>
 
-          {error && <p className="rounded-lg bg-rose-500/10 p-2.5 text-xs text-rose-300 ring-1 ring-rose-500/30">{error}</p>}
+          {error && <p className="rounded-lg bg-rose-50 p-2.5 text-xs text-rose-700 ring-1 ring-rose-200">{error}</p>}
 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+            className="btn-raised w-full rounded-xl bg-gradient-to-r from-[var(--color-brand-1)] to-[var(--color-brand-2)] py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
           >
             {submitting ? 'Logging in...' : 'Log in'}
           </button>
