@@ -58,4 +58,24 @@ export const DOMAIN_STYLES = {
   Other: 'text-slate-700 bg-slate-100 ring-slate-300',
 };
 
+// Hex equivalents of the STATUS_STYLES / DOMAIN_STYLES dot colors, for use in
+// chart fills (SVG/recharts) where a Tailwind class string cannot apply.
+export const STATUS_HEX = {
+  Submitted: '#64748b',
+  'Under Review': '#f59e0b',
+  Approved: '#0ea5e9',
+  Prototype: '#d946ef',
+  Implemented: '#10b981',
+};
+
+export const DOMAIN_HEX = {
+  Education: '#8b5cf6',
+  Sustainability: '#10b981',
+  Health: '#f43f5e',
+  Technology: '#06b6d4',
+  Infrastructure: '#f59e0b',
+  Safety: '#ef4444',
+  Other: '#64748b',
+};
+
 export const MIN_PROBLEM_LENGTH = 50;

@@ -7,6 +7,7 @@ import CountUp from '../components/CountUp.jsx';
 import IdeaCard from '../components/IdeaCard.jsx';
 import CardSkeleton from '../components/CardSkeleton.jsx';
 import HeroStack from '../components/HeroStack.jsx';
+import CampusBuilding from '../components/CampusBuilding.jsx';
 import TiltCard from '../components/TiltCard.jsx';
 
 const FEATURES = [
@@ -125,7 +126,8 @@ export default function HomePage() {
             )}
           </div>
 
-          <div className="hidden lg:block">
+          <div className="relative hidden h-[30rem] lg:block">
+            <CampusBuilding className="absolute left-1/2 top-6 h-80 w-80 -translate-x-1/2 opacity-95" />
             <HeroStack />
           </div>
         </div>
